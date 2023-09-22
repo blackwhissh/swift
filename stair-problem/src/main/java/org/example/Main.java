@@ -7,10 +7,16 @@ public class Main {
     }
 
     public static int countVariants(int stairsCount) {
+        validate(stairsCount);
         if (stairsCount <= 1) {
             return 1;
         } else {
             return countVariants(stairsCount - 1) + countVariants(stairsCount - 2);
+        }
+    }
+    public static void validate(int stairsCount){
+        if(stairsCount < 0){
+            throw new IllegalArgumentException("Input should be a positive Integer");
         }
     }
 }
